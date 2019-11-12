@@ -5,9 +5,21 @@
 
 <!-- Log in button -->
 
+
+
 <!-- Change to Get started -->
 
-<%= link_to "GET STARTED", "/projects/new", class: "button button-purple" %>
+
+
+  <% if user_signed_in? %>
+
+    <%= link_to "GET STARTED", "/projects/new", class: "button button-purple" %>
+
+  <% else %>
+
+    <%= link_to "Login", new_user_session_path, class: "button" %>
+
+  <% end %>
 
 
 <!-- Information always there -->
